@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="css/users/users.css" />
+
+<%extend 'header.ect' %>
+<div class="container">
+  <h1>Наши клиенты</h1>
+  <section id="team">
+    <% for user in @users : %>
+    <div class="card">
+      <img src="img/users/logo.jpg" alt="" />
+      <div class="data">
+        <% if user.role.role_id == 2 : %>
+        <h2><%= user.client.name %> <%= user.client.surname %></h2>
+        <i><%= user.role.name %></i>
+        <p>
+          login: <%= user.login %><br />
+          password: <%= user.password %><br />
+          Телефон: <%= user.phone.number %> <br />
+          Адрес: <%= user.address.address_name %>
+        </p>
+
+        <div class="buttons">
+          <form action="clientsOrder.html" method="get">
+            <input type="hidden" name="id" value="<%- user.client.id %>" />
+            <button>
+              <img src="/img/users/button.png" alt="Кнопка «button»" />
+            </button>
+          </form>
+
+          <button>
+            <img src="/img/users/insta.png" />
+          </button>
+          <button>
+            <img src="/img/users/vk.png" />
+          </button>
+        </div>
+
+        <% else : %>
+        <h2>Нет доп. информации</h2>
+        <i><%= user.role.name %></i>
+        <p>
+          login: <%= user.login %><br />
+          password: <%= user.password %>
+        </p>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  </section>
+
+  <footer>
+    <p align="center">
+      <a
+        href="https://www.instagram.com/annashchemeliova/"
+        class="btn-twtr"
+        target="_b"
+        >Follow me on Instagramm</a
+      >
+    </p>
+  </footer>
+</div>

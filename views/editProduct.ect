@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:900|Roboto:300&display=swap&subset=cyrillic"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/general/normalize.css" />
+    <link rel="stylesheet" href="css/product/editPage.css" />
+    <link rel="stylesheet" href="css/general/main.css" />
+    <link rel="stylesheet" href="css/product/section-top.css" />
+    <link rel="stylesheet" href="css/product/editComponents.css" />
+  </head>
+  <body>
+    <!-- header-page -->
+    <header class="header-page">
+      <div class="container header-page__container">
+        <div class="header-page__start">
+          <div class="logo">
+            <img
+              class="logo__img"
+              src="img/common/logo7.svg"
+              alt=""
+              width="100"
+              height="65"
+            />
+          </div>
+        </div>
+        <div class="header-page__end">
+          <nav class="header-page__nav">
+            <ul class="header-page__ul">
+              <li class="header-page__li">
+                <a class="header-page__link" href="index.html">
+                  <span class="header-page__text">продукты</span>
+                </a>
+              </li>
+              <li class="header-page__li">
+                <a class="header-page__link" href="#">
+                  <span class="header-page__text">о нас</span>
+                </a>
+              </li>
+              <li class="header-page__li">
+                <a class="header-page__link" href="#">
+                  <span class="header-page__text">контакты</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="phone">
+            <a class="phone__item header-page__phone" href="tel:+79999999999"
+              >+7 (999) 999-99-99</a
+            >
+          </div>
+          <div class="header-page__hamburger">
+            <button class="btn-menu" type="button">
+              <span class="btn-menu__box">
+                <span class="btn-menu__inner"></span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /.header-page -->
+
+    <section class="section section-catalog">
+      <div>
+        <div class="product catalog__product">
+          <form class="decor" action="saveProduct.html" method="post">
+            <div class="form-left-decoration"></div>
+            <div class="form-right-decoration"></div>
+            <div class="circle"></div>
+            <div class="form-inner">
+              <h3>Редактирование продукта</h3>
+
+              <% if @product.id? : %>
+              <input type="hidden" name="id" value="<%- @product.id %>" />
+              <% end %>
+
+              <input
+                type="text"
+                placeholder="Название продукта"
+                id="title"
+                name="title"
+                value="<%= @product.title %>"
+              />
+
+              <textarea
+                type="text"
+                placeholder="Описание"
+                id="description"
+                name="description"
+                value="<%= @product.description %>"
+                rows="3"
+              >
+<%= @product.description %></textarea
+              >
+
+              <input
+                type="text"
+                placeholder="Цена"
+                id="price"
+                name="price"
+                value="<%= @product.price %>"
+              />
+
+              <select name="catigory_id" class="dropdown-select">
+                <% for category in @categories : %>
+                <option
+                  id="catigory_id"
+                  name="catigory_id"
+                  value="<%= category.id %>"
+                >
+                  <%= category.name %>
+                </option>
+                <% end %>
+              </select>
+
+              <input type="submit" value="Сохранить" />
+            </div>
+          </form>
+
+          <!--<form action="saveProduct.html" method="post">
+            <% if @product.id? : %>
+            <input type="hidden" name="id" value="<%- @product.id %>" />
+            <% end %>
+
+            <div class="product__description">
+              <label for="title">Название:</label>
+            </div>
+            <div>
+              <input id="title" name="title" value="<%= @product.title %>" />
+            </div>
+
+            <div class="product__description">
+              <label for="description">Описание:</label>
+            </div>
+            <div>
+              <input
+                id="description"
+                name="description"
+                value="<%= @product.description %>"
+              />
+            </div>
+
+            <div class="product__description">
+              <label for="catigory_id">Категория id:</label>
+            </div>
+            <div class="dropdown">
+              <select name="catigory_id" class="dropdown-select">
+                <% for category in @categories : %>
+                <option
+                  id="catigory_id"
+                  name="catigory_id"
+                  value="<%= category.id %>"
+                >
+                  <%= category.name %>
+                </option>
+                <% end %>
+              </select>
+            </div>
+
+            <div class="product__description">
+              <label for="price">Цена:</label>
+            </div>
+            <div>
+              <input id="price" name="price" value="<%= @product.price %>" />
+            </div>
+            <button class="btn product__btn">Сохранить</button>
+          </form> -->
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

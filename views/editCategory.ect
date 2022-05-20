@@ -1,0 +1,47 @@
+<%extend 'header.ect' %>
+
+  <div class="container">
+    <table class="table_price">
+      <caption>
+        Редактирование категорий
+      </caption>
+      <tr>
+        <th>Название</th>
+        <th colspan="2"></th>
+      </tr>
+      <% for category in @categories : %>
+      <tr>
+        <td><%= category.name %></td>
+        <td>
+          <form
+            onsubmit="SubmitForm(this)"
+            action="saveCategory.html"
+            method="post"
+            id="<%- category.id %>"
+          >
+            <input type="hidden" name="id" value="<%- category.id %>" />
+            <input type="hidden" name="name" value="<%= category.name %>" />
+            <button>изменить</button>
+          </form>
+        </td>
+        <td>
+          <form action="deleteCategory.html" method="post">
+            <input type="hidden" name="id" value="<%- category.id %>" />
+            <button>удалить</button>
+          </form>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+    <form
+      class="table_price button"
+      action="saveCategory.html"
+      method="post"
+      onsubmit="SubmitForm(this)"
+    >
+      <input type="hidden" name="name" value="<%= category.name %>" />
+      <button>Добавить категорию</button>
+    </form>
+  </div>
+</div>
+<script type="text/javascript" src="js/editCategory.js"></script>

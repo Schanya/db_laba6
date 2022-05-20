@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:900|Roboto:300&display=swap&subset=cyrillic"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/general/normalize.css" />
+    <link rel="stylesheet" href="css/general/components.css" />
+    <link rel="stylesheet" href="css/general/main.css" />
+    <link rel="stylesheet" href="css/general/header-page.css" />
+    <link rel="stylesheet" href="css/product/section-top.css" />
+  </head>
+  <body>
+    <!-- header-page -->
+    <header class="header-page">
+      <div class="container header-page__container">
+        <div class="header-page__start">
+          <div class="logo">
+            <img
+              class="logo__img"
+              src="img/common/logo7.svg"
+              alt=""
+              width="100"
+              height="65"
+            />
+          </div>
+        </div>
+        <div class="header-page__end">
+          <nav class="header-page__nav">
+            <ul class="header-page__ul">
+              <li class="header-page__li">
+                <a class="header-page__link" href="index.html">
+                  <span class="header-page__text">Продукты</span>
+                </a>
+              </li>
+              <li class="header-page__li">
+                <a class="header-page__link" href="users.html">
+                  <span class="header-page__text">Клиенты</span>
+                </a>
+              </li>
+              <li class="header-page__li">
+                <a class="header-page__link" href="#">
+                  <span class="header-page__text">Контакты</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="phone">
+            <a class="phone__item header-page__phone" href="tel:+79999999999"
+              >+7 (999) 999-99-99</a
+            >
+          </div>
+          <div class="header-page__hamburger">
+            <button class="btn-menu" type="button">
+              <span class="btn-menu__box">
+                <span class="btn-menu__inner"></span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /.header-page -->
+
+    <!-- section-top -->
+    <section class="section-top">
+      <div class="container section-top__container">
+        <p class="section-top__info">
+          технологии взаимодействия <br />с базами данных
+        </p>
+        <h1 class="section-top__title">Интернет магазин</h1>
+        <div class="section-top__btn">
+          <button class="btn" type="button" onclick="markAnswert()">Поставить 10</button>
+        </div>
+      </div>
+    </section>
+    <!-- /.section-top -->
+    <div class="content">
+      <section class="section section-catalog">
+        <div class="container"><% content %></div>
+      </section>
+    </div>
+  </body>
+</html>

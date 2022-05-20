@@ -1,0 +1,43 @@
+.message, .footer {
+    padding: 10px;
+}
+
+.message, .footer {
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.message {
+    border-color: blue;
+    background: #DEF;
+}
+
+.footer {
+    border-color: green;
+    background: #DFE;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 2px 5px;
+}
+
+.inline {
+    display: inline;
+}
+
+.productButton {
+    text-align: -webkit-center;
+}
+
+.content {
+    display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+}
